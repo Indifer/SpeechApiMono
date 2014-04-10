@@ -34,6 +34,7 @@ namespace AndroidApplication1
             speech.SetParameter(SpeechSynthesizer.PITCH, "50");
             speech.SetParameter(SpeechSynthesizer.VOLUME, "100");
 
+
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.MyButton);
@@ -45,6 +46,8 @@ namespace AndroidApplication1
                 EditText text2 = FindViewById<EditText>(Resource.Id.editText1);
 
                 speech.StartSpeaking(text2.Text);
+
+                string speaker = speech.ParseSpeaker();
             };
         }
     }
